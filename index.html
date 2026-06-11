@@ -1,46 +1,111 @@
----
-layout: default
-robots: noindex
----
+<!DOCTYPE html>
+<html lang="fr">
 
-<!--<div class="main-post-list">-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <ul class="timeline">
-    
-    {% for project in site.data.projects %}
+    <title>Les P'tits Génies et le Manoir des Secrets</title>
 
-      <li class="timeline-inverted">
-        <div class="timeline-image">
-          <img class="img-me" src="{{ project.img | prepend: site.baseurl }}" alt="">
-        </div>
-        <div class="timeline-panel">
-          <div class="timeline-heading">
-            <h4><a href="https://github.com/{{ project.gh_user }}/{{ project.repo }}" target="_blank">{{ project.name }}</a></h4>
-          </div>
-          <div class="timeline-body">
-            {% if project.desc %}
-              {{ project.desc | markdownify }}
-            {% else %}
-            <div repotext="{{ project.repo }}">
-              <span class="desc"></div>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <img
+            src="assets/logo.png"
+            alt="Les P'tits Génies"
+            class="logo">
+
+        <p class="construction-warning">
+            🚧 Site en construction — Le jeu est actuellement en développement.
+        </p>
+    </br>
+        <a href="#newsletter" class="scroll-button">
+            <span></span>
+        </a>
+    </br>
+    </br>
+
+    </section>
+
+    <div class="section-divider">
+
+        <svg viewBox="0 0 1000 50" preserveAspectRatio="none">
+
+        <line
+            x1="0"
+            y1="25"
+            x2="440"
+            y2="25"
+            stroke="#d8b050"
+            stroke-width="3"/>
+
+        <line
+            x1="560"
+            y1="25"
+            x2="1000"
+            y2="25"
+            stroke="#d8b050"
+            stroke-width="3"/>
+
+            <polygon
+                points="500,0 526,25 500,50 474,25"
+                fill="#d8b050"
+                stroke="#d8b050"
+                stroke-width="1"/>
+
+        </svg>
+
+    </div>
+
+    <section id="newsletter" class="newsletter-section">
+
+        <div class="newsletter-box">
+
+            <div class="ornament">
+                ✦ ✦ ✦
             </div>
-            {% endif %}
-            <div user="{{ project.gh_user }}" repo="{{ project.repo }}" class="ghbtn" style="margin-top: 10px;">
-              <a target="_blank" href="https://github.com/{{ project.gh_user }}/{{ project.repo }}/stargazers"><i class="fa fa-star"></i><span class="star"> ...</span></a>&emsp;&emsp;
-              <a target="_blank" href="https://github.com/{{ project.gh_user }}/{{ project.repo }}/network"><i class="fa fa-code-fork"></i><span class="fork"> ...</span></a>&emsp;&emsp;
-              <a target="_blank" href="https://github.com/{{ project.gh_user }}/{{ project.repo }}/watchers"><i class="far fa-eye"></i><span class="watchers"> ...</span></a>
-              <div style="height: 10px;"></div>
-          </div>
+
+            <h2>
+                Soyez les premiers informés !
+            </h2>
+
+            <p class="subtitle">
+                Inscrivez-vous pour recevoir les dernières nouvelles,
+                les premières images et la date de sortie.
+            </p>
+
+            <form
+                action="https://app.kit.com/forms/9550655/subscriptions"
+                method="post"
+                target="_blank"
+                class="newsletter-form">
+
+                <input
+                    type="email"
+                    name="email_address"
+                    placeholder="Votre adresse email"
+                    required>
+
+                <button type="submit">
+                    M'informer
+                </button>
+
+            </form>
+
+            <p class="privacy">
+                🔒 Vos données sont confidentielles et ne seront jamais partagées.
+            </p>
+
         </div>
-      </li>
-    {% endfor %}
-    <!--
-    <li class="timeline-inverted">
-      <div class="timeline-image">
-        <img class="user-image" src="{{site.baseurl}}{{ site.timeline-img }}" alt="">
-      </div>
-    </li> -->
-  </ul>
 
-<!--</div>-->
+    </section>
 
+</body>
+
+</html>
